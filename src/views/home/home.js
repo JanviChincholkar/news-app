@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Home.css";
-import NewsArticle from "./../../components/NewsArticle/NewsArticle";
+import NewsArticle from "./../../components/newsartical/NewsArticle";
 
 function Home() {
     const [news, setNews] = useState([])
@@ -10,7 +10,7 @@ function Home() {
     const loadNews = async () => {
         try{
             const response = await axios.get(
-                `https://newsapi.org/v2/everything?q=${searchQuery}&from=2024-06-22&sortBy=publishedAt&apiKey=4c087080cb8f475aa10b90f62dd9ec26`
+                `https://newsapi.org/v2/everything?${searchQuery}&from=2024-07-22&to=2024-07-22&sortBy=popularity&apiKey=99714d6452bf47e6ac289d1c1650b237`
               );
             setNews(response.data.articles)
         }
